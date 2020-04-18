@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import {Form, Icon, Input, Button, Checkbox,message } from 'antd';
 import axios from 'axios'
 import './login.scss'
+import ReactCanvasNest from 'react-canvas-nest';
 class login extends Component {
   handleSubmit = e => {
     e.preventDefault();
@@ -9,7 +10,7 @@ class login extends Component {
     if (!err) {
       axios({
         method:'post',
-        url:'/login/loginSystem',
+        url:'/api/login/loginSystem',
         data:values,
       }).then((res)=>{
           if(res.data.code === 200){
@@ -77,6 +78,7 @@ class login extends Component {
                 </Form>
               </div>
             </div>
+            <ReactCanvasNest className='canvasNest' config = {{ pointColor: ' 255, 255, 255 ' }} style = {{ zIndex: 99 }} />
           </div>
     );
   }

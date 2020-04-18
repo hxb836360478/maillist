@@ -46,7 +46,7 @@ export default class schedule extends Component {
       handleOk = e => {
         axios({
           method:'post',
-          url:'/index/schedule/newContact',
+          url:'/api/index/schedule/newContact',
           data:this.state.formItem,
         }).then((res)=>{
           console.log(res.data.code)
@@ -91,7 +91,7 @@ export default class schedule extends Component {
       list = ()=>{
         axios({
           method:'get',
-          url:'/index/schedule/list',
+          url:'/api/index/schedule/list',
           params:{
             username:JSON.parse(localStorage.getItem("username")),
           },
@@ -106,7 +106,7 @@ export default class schedule extends Component {
       query(){
         axios({
           method:'post',
-          url:'/index/schedule/querys',
+          url:'/api/index/schedule/querys',
           data:this.state.formItems,
         }).then((res)=>{
             if(res.data.code === 200){
@@ -120,7 +120,7 @@ export default class schedule extends Component {
         console.log(id)
         axios({
           method:'get',
-          url:'/index/schedule/deleteContact/'+id,
+          url:'/api/index/schedule/deleteContact/'+id,
         }).then((res)=>{
           if(res.data.code === 200){
             message.success(res.data.data);

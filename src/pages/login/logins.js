@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import {Form,Input,Select,Button,message } from 'antd';
 import './logins.scss'
 import axios from 'axios'
+import ReactCanvasNest from 'react-canvas-nest';
 const { Option } = Select;
 class logins extends Component {
       state = {
@@ -13,7 +14,7 @@ class logins extends Component {
           if (!err) {
             axios({
               method:'post',
-              url:'/login/newContact',
+              url:'/api/login/newContact',
               data:values,
             }).then((res)=>{
               console.log(res.data.code)
@@ -134,6 +135,7 @@ class logins extends Component {
                     </Form>
                   </div>
                 </div>
+                <ReactCanvasNest className='canvasNest' config = {{ pointColor: ' 255, 255, 255 ' }} style = {{ zIndex: 99 }} />
               </div>
         );
       }

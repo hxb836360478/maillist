@@ -27,7 +27,7 @@ export default class group extends Component {
     confirm(e) {
       axios({
         method:'get',
-        url:'/index/group/deleteContact/'+e,
+        url:'/api/index/group/deleteContact/'+e,
       }).then((res)=>{
         if(res.data.code === 200){
           message.success(res.data.data);
@@ -40,7 +40,7 @@ export default class group extends Component {
     handleOk = () => {
       axios({
         method:'post',
-        url:'/index/group/newContact',
+        url:'/api/index/group/newContact',
         data:this.state.formItem,
       }).then((res)=>{
         console.log(res.data.code)
@@ -68,7 +68,7 @@ export default class group extends Component {
     list = ()=>{
       axios({
         method:'get',
-        url:'/index/group/list',
+        url:'/api/index/group/list',
         params:{
           username:JSON.parse(localStorage.getItem("username")),
         },

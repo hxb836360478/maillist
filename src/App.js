@@ -5,8 +5,7 @@ import axios from 'axios'
 
 const App = () => (
   <div className="App">
-    <Button type="primary">Button</Button>
+    <Button type="primary"></Button>
   </div>
 );
-
 export default App;

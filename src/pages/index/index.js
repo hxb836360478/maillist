@@ -8,6 +8,7 @@ import communication from '../communication/communication'
 import system from '../system/system'
 import schedule from '../schedule/schedule'
 import album from '../album/album'
+import ReactCanvasNest from 'react-canvas-nest';
 const { Header, Content, Footer, Sider } = Layout;
 const { confirm } = Modal;
 export default class index extends Component {
@@ -84,6 +85,7 @@ export default class index extends Component {
                 <Footer style={{ textAlign: 'center' }}>{JSON.parse(localStorage.getItem('username'))}的通讯录</Footer>
               </Layout>
             </Layout>
+            <ReactCanvasNest className='canvasNest' config = {{ pointColor: ' 255, 255, 255 ' }} style = {{ zIndex: 99 }} />
           </BrowserRouter>
         );
     }

@@ -66,7 +66,7 @@ export default class communication extends Component {
       handleOk = e => {
         axios({
           method:'post',
-          url:'/index/communication/newContact',
+          url:'/api/index/communication/newContact',
           data:this.state.formItems,
         }).then((res)=>{
           console.log(res.data.code)
@@ -90,7 +90,7 @@ export default class communication extends Component {
       list = ()=>{
         axios({
           method:'get',
-          url:'/index/communication/list',
+          url:'/api/index/communication/list',
           params:{
             username:JSON.parse(localStorage.getItem("username")),
           },
@@ -112,7 +112,7 @@ export default class communication extends Component {
         console.log(id)
         axios({
           method:'get',
-          url:'/index/communication/deleteContact/'+id,
+          url:'/api/index/communication/deleteContact/'+id,
         }).then((res)=>{
           if(res.data.code === 200){
             message.success(res.data.data);
@@ -125,7 +125,7 @@ export default class communication extends Component {
       query(){
         axios({
           method:'post',
-          url:'/index/communication/querys',
+          url:'/api/index/communication/querys',
           data:this.state.formItem,
         }).then((res)=>{
             if(res.data.code === 200){

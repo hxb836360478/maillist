@@ -22,7 +22,7 @@ export default class system extends Component {
     changePassword(){
         axios({
             method:'post',
-            url:'/login/newContact',
+            url:'/api/login/newContact',
             data:this.state.formItem
         }).then((res)=>{
             if(res.data.code === 200){
